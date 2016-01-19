@@ -1,0 +1,45 @@
+R presentation practice
+========================================================
+author: Mei Chiao Lin
+date: January, 20, 2016
+
+R Presentation and Shiny practice
+========================================================
+The practices performed in the presentation:
+
+**1. Use shiny to create interactive plot to show distribution plot with R datasets, please see the demo on the link:**
+https://meiclin.shinyapps.io/Dev_project/
+
+**2. R Code Practice on R Presentation**
+
+**3. R Chart Practice on R Presentation with scatter plot**
+
+**4. Cooleration Plot Practice with ggplot on R Presentation**
+
+Actually, I tried Slidify and still work on putting shinyapp on Slidify
+
+R Code Practice
+========================================================
+Show the first 6 and last 6 data of ToothGrowth dataset 
+```{r, echo=F}
+head(ToothGrowth)
+tail(ToothGrowth)
+```
+
+R Chart Practice
+========================================================
+Scatter plot practice with ToothGrowth dataset
+```{r, echo=FALSE}
+plot(ToothGrowth)
+```
+
+Correlation Plot Practice
+========================================================
+**To see the effect of supplements on tooth length with ToothGrowth dataset by ggplot.
+The result shows the tooth length has positive correlation with the dosage of VC and OJ supplements.**
+
+```{r, echo=F}
+library(datasets)
+library(ggplot2)
+ggplot(data=ToothGrowth, aes(x=as.factor(dose), y=len, fill=supp)) + geom_boxplot() + facet_grid(. ~ supp) + xlab("Do se in miligrams") + ylab ("Tooth length") + guides(fill=guide_legend(title="Supplement type"))
+```
